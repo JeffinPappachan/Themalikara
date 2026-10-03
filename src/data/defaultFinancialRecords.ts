@@ -1,0 +1,72 @@
+import type { StoredFinancialRecords } from '@/data/financialTypes'
+
+export const defaultFinancialRecords: StoredFinancialRecords = {
+  targetInr: 600_000,
+  lastUpdatedAt: '2026-10-03T18:45:00+05:30',
+  recentContributions: [
+    {
+      id: 'c1',
+      contributorName: 'Antony & Family',
+      amountInr: 10_000,
+      unitId: 'st-john',
+      unitName: "St. John's Unit",
+      contributedOn: '2026-10-03',
+    },
+    {
+      id: 'c2',
+      contributorName: 'Mary Joseph',
+      amountInr: 5_000,
+      unitId: 'st-stephen',
+      unitName: "St. Stephen's Unit",
+      contributedOn: '2026-10-02',
+    },
+    {
+      id: 'c3',
+      contributorName: 'Thomas P. V.',
+      amountInr: 2_500,
+      unitId: 'st-thomas',
+      unitName: "St. Thomas's Unit",
+      contributedOn: '2026-10-02',
+    },
+    {
+      id: 'c4',
+      contributorName: 'Sebastian Unit — group',
+      amountInr: 3_000,
+      unitId: 'st-sebastian',
+      unitName: "St. Sebastian's Unit",
+      contributedOn: '2026-10-01',
+    },
+    {
+      id: 'c5',
+      contributorName: 'Elizabeth Kurian',
+      amountInr: 1_500,
+      unitId: 'st-stephen',
+      unitName: "St. Stephen's Unit",
+      contributedOn: '2026-09-30',
+    },
+    {
+      id: 'c6',
+      contributorName: 'John & Sneha',
+      amountInr: 2_000,
+      unitId: 'st-john',
+      unitName: "St. John's Unit",
+      contributedOn: '2026-09-29',
+    },
+    {
+      id: 'c7',
+      contributorName: 'Parish well-wisher',
+      amountInr: 1_000,
+      unitId: 'st-sebastian',
+      unitName: "St. Sebastian's Unit",
+      contributedOn: '2026-09-28',
+    },
+    {
+      id: 'c8',
+      contributorName: 'George Mathew',
+      amountInr: 4_000,
+      unitId: 'st-thomas',
+      unitName: "St. Thomas's Unit",
+      contributedOn: '2026-09-27',
+    },
+  ],
+}

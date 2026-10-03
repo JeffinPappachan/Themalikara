@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a0a2e"/>
+      <stop offset="50%" style="stop-color:#4a1942"/>
+      <stop offset="100%" style="stop-color:#0f2744"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <circle cx="800" cy="380" r="160" fill="none" stroke="#d4af37" stroke-width="3" opacity="0.6"/>
+  <circle cx="800" cy="380" r="120" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.4"/>
+  <text x="800" y="400" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-size="38">Japamala Thirunal</text>
+  <text x="800" y="560" text-anchor="middle" fill="#e8c547" font-family="sans-serif" font-size="22">Replace: /public/images/hero-festival.jpg</text>
+</svg>

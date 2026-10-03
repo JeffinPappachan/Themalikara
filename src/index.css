@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-parish-blue: #1e5fb4;
+  --color-parish-blue-dark: #0f3d7a;
+  --color-navy: #0a1628;
+  --color-navy-card: #111d33;
+  --color-gold: #d4af37;
+  --color-gold-light: #e8c547;
+  --color-gold-dark: #9a7b1a;
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-malayalam: 'Noto Sans Malayalam', 'DM Sans', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-svh bg-stone-100 font-sans text-stone-800 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-ml {
+    font-family: var(--font-malayalam);
+  }
+}
+
+/* Subtle stone texture like parish reference site */
+.bg-stone-texture {
+  background-color: #e8e6e3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#64748b"/>
+  <circle cx="200" cy="180" r="70" fill="#94a3b8"/>
+  <rect x="80" y="280" width="240" height="180" rx="20" fill="#94a3b8"/>
+  <text x="200" y="460" text-anchor="middle" fill="#f1f5f9" font-size="14">Vicar photo placeholder</text>
+</svg>
