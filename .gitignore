@@ -15,6 +15,9 @@ dist-ssr
 .env.*
 !.env.example
 
+# Local MCP config (use .cursor/mcp.json.example as template)
+.cursor/mcp.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

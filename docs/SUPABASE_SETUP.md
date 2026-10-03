@@ -1,49 +1,43 @@
 # Supabase setup (Themalikkara)
 
-Project ref: **hjwtpzxjkxqgmritrlai**  
-URL: `https://hjwtpzxjkxqgmritrlai.supabase.co`
+Copy `.env.example` → `.env` and set values from **Project Settings → API** in the Supabase dashboard.
 
 ## 1. Environment variables
 
-Copy `.env.example` to `.env` and fill in values from **Project Settings → API**:
-
 | Variable | Where it goes |
 | --- | --- |
-| `VITE_SUPABASE_URL` | Frontend (Vite) |
-| `VITE_SUPABASE_ANON_KEY` | Frontend (Vite) |
-| `SUPABASE_SERVICE_ROLE_KEY` | **Never** in the frontend — local scripts / server only |
-| `SUPABASE_PROJECT_REF` | MCP / CI (optional) |
+| `VITE_SUPABASE_URL` | Frontend (Vite) — Netlify build env |
+| `VITE_SUPABASE_ANON_KEY` | Frontend (Vite) — Netlify build env |
+| `SUPABASE_SERVICE_ROLE_KEY` | **Local only** — never Netlify `VITE_*` |
+| `SUPABASE_PROJECT_REF` | MCP URL / local scripts |
 
 Restart `npm run dev` after changing `.env`.
 
 ## 2. Database schema
 
-Applied on project **hjwtpzxjkxqgmritrlai**:
+Migrations in `supabase/migrations/`:
 
-- `001_festival_finance` — `festival_settings`, `contributions`, RLS  
-- `002_realtime_publication` — live updates on the public dashboard  
+- `001_festival_finance` — tables + RLS  
+- `002_realtime_publication` — live dashboard updates  
 
-Local copies: `supabase/migrations/`. Regenerate types: Supabase MCP `generate_typescript_types` → `src/types/database.ts`.
+Apply via Supabase SQL Editor or Supabase MCP.
 
 ## 3. Admin authentication
 
-1. In Supabase → **Authentication → Users**, create an admin user (email + password).
-2. Open `/admin` and sign in with that email and password.
-3. RLS allows **public read**; **insert/update/delete** require an authenticated Supabase session.
-
-Until `.env` has Supabase keys, the app falls back to **localStorage** and env-based `/admin` login.
+1. Supabase → **Authentication → Users** → create admin (email + password).  
+2. Open `/admin` and sign in.  
+3. Public read; writes require authenticated session.
 
 ## 4. Cursor MCP
 
-Project files:
+Set `YOUR_PROJECT_REF` in `.cursor/mcp.json` (Project ID in Supabase settings), then authenticate Supabase in **Cursor → Settings → MCP**.
 
-- `.cursor/mcp.json` (Cursor project MCP)
-- `mcp.json` (same config at repo root)
+Do **not** commit real keys or `.env`.
 
-Both point at:
+## 5. Netlify
 
-`https://mcp.supabase.com/mcp?project_ref=hjwtpzxjkxqgmritrlai`
+- Build: `npm run build`, publish `dist`  
+- Env: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` only (remove service role / access token from Netlify if present)  
+- SPA routing: `public/_redirects` and `netlify.toml` in this repo  
 
-**Authenticate in Cursor:** Settings → MCP → Supabase → connect / sign in with Supabase OAuth.
-
-Do **not** commit `.env` or service role keys to git.
+After deploy, add your Netlify URL under Supabase **Authentication → URL configuration**.
